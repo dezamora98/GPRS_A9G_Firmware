@@ -90,13 +90,13 @@ TBObj(String name, T data, TBObjContainer &TBObjects, uint8_t mode = M_TELEMETRY
 Nótese que este objeto presenta varios parámetros para definir su comportamiento y puede ser engorroso o confuso crearlos; por tanto, se definieron las siguientes macros:
 
 ```C++
-	Telemetry_OUT(type, name, TimeOut)
-	SharedAttribute(type, name, TimeOut)
-	Attribute_IN(type, name)
-	Attribute_OUT(type, name, TimeOut)
-	RPCData_OUT(type, name, TimeOut)
-	RPCData_IN(type, name)
-	RPCFunction_IN(callback)
+	Telemetry_OUT(type, name, TimeOut);
+	SharedAttribute(type, name, TimeOut);
+	Attribute_IN(type, name);
+	Attribute_OUT(type, name, TimeOut);
+	RPCData_OUT(type, name, TimeOut);
+	RPCData_IN(type, name);
+	RPCFunction_IN(callback);
 ```
 
 Estas macros permiten definir el tipo de dato, el nombre del objeto y el tiempo de actualización de manera automática. El nombre de la variable y el nombre del objeto son los mismos para crear una homogeneidad entre las variables codificadas y los datos transmitidos a la plataforma.
