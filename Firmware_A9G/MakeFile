@@ -1,0 +1,23 @@
+BOARD = COM12
+BAUD = 115200
+PROJECT_DIR = ./A9G
+RSHELL = rshell
+BACKUP_DIR = ./Backup_A9G/
+BUFFER_SIZE = 8192
+
+sync:
+	$(RSHELL) -p $(BOARD) -b $(BAUD) --buffer-size $(BUFFER_SIZE) rsync $(PROJECT_DIR) /pyboard
+sync_main:
+	$(RSHELL) -p $(BOARD) -b $(BAUD) --buffer-size $(BUFFER_SIZE) cp $(PROJECT_DIR)/main.py /pyboard/
+sync_cellular_res:	
+	$(RSHELL) -p $(BOARD) -b $(BAUD) --buffer-size $(BUFFER_SIZE) cp $(PROJECT_DIR)/cellular_resilence.py /pyboard/
+sync_client:
+	$(RSHELL) -p $(BOARD) -b $(BAUD) --buffer-size $(BUFFER_SIZE) cp $(PROJECT_DIR)/lib/uthingsboard/client.py /pyboard/lib/uthingsboard/
+run_main_exit:
+	$(RSHELL) -p $(BOARD) -b $(BAUD) --buffer-size $(BUFFER_SIZE) repl ~ import main ~
+run_main_upy:
+	$(RSHELL) -p $(BOARD) -b $(BAUD) --buffer-size $(BUFFER_SIZE) repl ~ import main
+run_upy:
+	$(RSHELL) -p $(BOARD) -b $(BAUD) --buffer-size $(BUFFER_SIZE) repl
+backup:
+	$(RSHELL) -p $(BOARD) -b $(BAUD) --buffer-size $(BUFFER_SIZE) cp -r /pyboard/* $(BACKUP_DIR)

@@ -1,0 +1,1 @@
+Para configurar el dispositivo entre al fichero main.py y cambie el TOKEN, HOST y PORT.

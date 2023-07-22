@@ -1,0 +1,11 @@
+Para cargar el firmware del módulo A9G (únicamente para la versión beta 1.0.0), el primer paso es cargar el intérprete de MicroPython en el módulo. Para esto, es necesario descargar el port compilado desde este enlace (https://github.com/pulkin/micropython/releases/download/latest-build/firmware_debug_flash.lod) junto con el paquete de herramientas [CoolTools](https://ai-thinker-open.github.io/GPRS_C_SDK_DOC/en/c-sdk/burn-debug.html).
+
+Para cargar MicroPython, debes seguir las instrucciones que aparecen en [Burn & Debug · GPRS C SDK DOC (ai-thinker-open.github.io)](https://ai-thinker-open.github.io/GPRS_C_SDK_DOC/en/c-sdk/burn-debug.html) para cargar un programa al A9/A9G. Es importante asegurarse de escoger la arquitectura 8955.
+
+Una vez cargado el intérprete, puedes realizar una prueba cambiando la conexión de la FTDI al UART-1 del A9/A9G, configurando la terminal a 115200bd sin paridad y añadiendo retorno de carro (“\r”) y fin de línea (“\n”). De esta manera, podrás interactuar con la consola de MicroPython ([micropython/ports/gprs_a9 at master · pulkin/micropython (github.com)](https://github.com/pulkin/micropython/tree/master/ports/gprs_a9)).
+
+Para trabajar con MicroPython, debes tener la herramienta `make` instalada y en las variables de entorno ([How To Install And Use “Make” In Windows (technewstoday.com)](https://www.technewstoday.com/install-and-use-make-in-windows/)). Adicionalmente, debes instalar la herramienta `rshell` en Python ([rshell · PyPI](https://pypi.org/project/rshell/)) para facilitar el desarrollo con MicroPython.
+
+Una vez preparado el entorno de trabajo con todas estas herramientas y cargado el intérprete en el módulo A9/A9G, si deseas cargar todos los archivos “.py” del firmware, debes dirigirte con la terminal a la carpeta del proyecto y escribir el comando “make sync” para sincronizar todos los archivos. Esto puede tardar hasta un minuto y en algunas ocasiones fallar, por lo que debes tener paciencia y si falla la sincronización, reiniciar el módulo y volver a intentarlo.
+
+Una vez cargado el firmware puede reiniciar el módulo y comenzar a utilizarlo o realizar un test escribiendo el comando "make run_main_upy" para ver los logs del módulo mientras está realizando todas sus tareas.
