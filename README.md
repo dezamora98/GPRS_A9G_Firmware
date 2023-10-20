@@ -1,4 +1,4 @@
-El objetivo de este repositorio es proporcionar una solución para la comunicación con la plataforma ThingsBoard, desplegada por AlaSoluciones en sus servidores, mediante el módulo A9G. La idea es aprovechar la capacidad de procesamiento del [A9G](doc/a9g_product_specification.pdf) y las herramientas de software disponibles para liberar, en la medida de lo posible, al MCU (maestro) que utiliza al A9G como módem.
+El objetivo de este repositorio es proporcionar una solución para la comunicación con la plataforma ThingsBoard, mediante el módulo A9G. La idea es aprovechar la capacidad de procesamiento del [A9G](doc/a9g_product_specification.pdf) y las herramientas de software disponibles para liberar, en la medida de lo posible, al MCU (maestro) que utiliza al A9G como módem.
 
 
 ## Firmware A9G (Beta 1.0.0)
